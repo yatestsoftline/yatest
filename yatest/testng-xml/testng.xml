@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Classmates Test Suite" parallel="false">
 	<listeners>
-		<listener class-name="com.mailru.classmates.common.log.TestngListener" />
+		<listener class-name="com.softline.yatest.common.log.TestngListener" />
 	</listeners>
 	<parameter name="webDriverURL"
 		value="http://classmatestest:bba84353-a8a7-4f1d-bded-d27cc820b3bd@ondemand.saucelabs.com:80/wd/hub" />
@@ -11,8 +11,8 @@
 	<parameter name="firefoxPlatform" value="xp" />
 	<test name="Authorisation And Personal Info Test">
 		<classes>
-			<class name="com.mailru.classmates.tests.session.SessionTest" />
-			<class name="com.mailru.classmates.tests.info.InfoTest" />
+			<class name="com.softline.yatest.tests.session.SessionTest" />
+			<class name="com.softline.yatest.tests.info.InfoTest" />
 		</classes>
 	</test>
 </suite>
