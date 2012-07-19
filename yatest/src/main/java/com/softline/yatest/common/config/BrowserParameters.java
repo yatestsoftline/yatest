@@ -24,7 +24,7 @@ public class BrowserParameters
   private BrowserParameters()
   {
     setDesiredCapabilities( DesiredCapabilities.firefox() );
-    getDesiredCapabilities().setCapability( "name", "Testing odnoklassniki.ru with Java on Sauce" );
+    getDesiredCapabilities().setCapability( "name", "Testing passport.yandex.ru with Java on Sauce" );
   }
 
   public final static BrowserParameters getInstance()

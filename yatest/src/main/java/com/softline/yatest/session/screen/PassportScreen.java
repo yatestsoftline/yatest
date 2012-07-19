@@ -9,12 +9,12 @@ import com.softline.yatest.common.ui.screen.AuthorisedScreenBase;
 /**
  * Screen for user dashboard view
  */
-public class PassportViewScreen extends AuthorisedScreenBase
+public class PassportScreen extends AuthorisedScreenBase
 {
 
   private FieldElement loginField = new FieldElement( getDriver(), "b-user" );
 
-  public PassportViewScreen( WebDriver webDriver )
+  public PassportScreen( WebDriver webDriver )
   {
     super( webDriver, "http://passport.yandex.ru/passport" );
   }

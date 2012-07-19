@@ -2,31 +2,32 @@ package com.softline.yatest.session.service;
 
 import com.softline.yatest.common.service.UiServiceBase;
 import com.softline.yatest.session.object.Session;
-import com.softline.yatest.session.screen.PassportViewLoginScreen;
-import com.softline.yatest.session.screen.PassportViewScreen;
+import com.softline.yatest.session.screen.PassportLoginScreen;
+import com.softline.yatest.session.screen.PassportScreen;
 
 public class SessionUiService extends UiServiceBase implements SessionUiServiceInProxy
 {
 
-  private PassportViewScreen processAuth( Session session )
+  private PassportLoginScreen openLoginScreen()
   {
-    PassportViewLoginScreen loginScreen = new PassportViewLoginScreen( getWebDriver() );
+    PassportLoginScreen loginScreen = new PassportLoginScreen( getWebDriver() );
     loginScreen.open();
-    return loginScreen.login( session.getLogin(), session.getPassword(), session.isSaveSession() );
+    return loginScreen;
   }
-  
+
   @Override
   public boolean isAuthPassed( Session session )
   {
-    PassportViewScreen passportViewScreen = processAuth( session );
-    return ( passportViewScreen.getLogin().equals( session.getLogin() ) );
+    PassportScreen passportScreen =
+      openLoginScreen().login( session.getLogin(), session.getPassword(), session.isSaveSession() );
+    return ( passportScreen.getLogin().equals( session.getLogin() ) );
   }
 
   @Override
   public boolean isAuthFailedWithError( Session session )
   {
-    processAuth( session );
-    PassportViewLoginScreen loginScreen = new PassportViewLoginScreen( getWebDriver() );
+    PassportLoginScreen loginScreen =
+      openLoginScreen().loginFailed( session.getLogin(), session.getPassword(), session.isSaveSession() );
     return loginScreen.isLoginErrorShown();
   }
 

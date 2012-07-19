@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Classmates Test Suite" parallel="false">
+<suite name="Softline Yandex Passport Test Suite" parallel="false">
  	<listeners>
 		<listener class-name="com.softline.yatest.common.log.TestngListener" />
 	</listeners>

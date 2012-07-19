@@ -57,7 +57,7 @@ public class UiServiceProxyFactory
       catch( Exception e )
       {
         log().info( "----------------EXCEPTION----------------" );
-        log().info( e.getMessage() );
+        log().info( e.getCause().getMessage() );
         log().info( "----------------EXCEPTION----------------" );
         throw e;
       }

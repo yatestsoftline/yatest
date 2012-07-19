@@ -13,7 +13,7 @@ import com.softline.yatest.common.ui.element.search_strategy.SearchStrategySelec
 /**
  * Login page, used not main page for checking drawing button somethere in code
  */
-public class LoginScreenBase extends ScreenBase
+public class SeparatePassportLoginScreenBase extends ScreenBase implements LoginScreen
 {
   private InputElement loginInput = new InputElement( getDriver(), "b-domik-username" );
 
@@ -26,12 +26,13 @@ public class LoginScreenBase extends ScreenBase
   
   private ErrorNoteElement errorNoteLogin = new ErrorNoteElement( getDriver(), "l-centered b-login-error i-popup i-popup_visibility_visible");
 
-  protected LoginScreenBase( WebDriver webDriver, String directUrl )
+  protected SeparatePassportLoginScreenBase( WebDriver webDriver, String directUrl )
   {
     super( webDriver, directUrl );
   }
 
-  protected void login( String login, String password, boolean saveSession, Screen screen )
+  @Override
+  public void login( String login, String password, boolean saveSession, AuthorisedScreen screen )
   {
     loginInput.typeWrite( login );
     passwordInput.typeWrite( password );
@@ -39,6 +40,16 @@ public class LoginScreenBase extends ScreenBase
     loginButton.clickAndWaitForScreen( screen );
   }
 
+  @Override
+  public void loginFailed( String login, String password, boolean saveSession, LoginScreen screen )
+  {
+    loginInput.typeWrite( login );
+    passwordInput.typeWrite( password );
+    saveSessionCheckbox.set( saveSession );
+    loginButton.clickAndWaitForScreen( screen );
+  }
+  
+  @Override
   public void validateScreen()
   {
     loginInput.waitAndGetWebElement();
