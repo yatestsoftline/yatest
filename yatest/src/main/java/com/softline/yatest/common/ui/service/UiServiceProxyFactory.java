@@ -1,4 +1,4 @@
-package com.softline.yatest.common.service;
+package com.softline.yatest.common.ui.service;
 
 import static com.softline.yatest.common.log.SystemOutputLogger.log;
 
@@ -6,11 +6,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.lang.reflect.Method;
 
-import com.softline.yatest.common.service.UiService;
-
-
 /**
- * Simple proxy through native reflection mechanism for automaticaly logging and browser closing support
+ * Simple proxy through native reflection mechanism for automaticaly logging and browser open/closing support in UI services
  * Unsafe, not contain any type checking
  * TODO Should be eliminated after Guice or some another AOP solution implemented 
  */

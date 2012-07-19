@@ -9,7 +9,7 @@
 	<parameter name="firefoxPlatform" value="xp" />
 	<test name="Authorisation Test">
 		<classes>
-			<class name="com.softline.yatest.tests.session.SessionTest" />
+			<class name="com.softline.yatest.tests.login.LoginTest" />
 		</classes>
 	</test>
 </suite>

@@ -1,9 +1,9 @@
-package com.softline.yatest.session.object;
+package com.softline.yatest.login.object;
 
 /**
  * Class for authentification data representation
  */
-public class Session
+public class LoginInfo
 {
   private String login;
 
@@ -11,7 +11,7 @@ public class Session
 
   private boolean saveSession;
 
-  public Session( String login, String password, boolean saveSession )
+  public LoginInfo( String login, String password, boolean saveSession )
   {
     setLogin( login );
     setPassword( password );
@@ -51,6 +51,6 @@ public class Session
   @Override
   public String toString()
   {
-    return getLogin() + "/" + getPassword() + ", " + isSaveSession();
+    return getLogin() + "/" + getPassword() + ", save session: " + isSaveSession();
   }
 }

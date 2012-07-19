@@ -8,20 +8,16 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import com.softline.yatest.common.config.BrowserParameters;
 import com.softline.yatest.common.timeout.Timeout;
 
-/**
- * Service, which provide WebDriver object to any UI service, should be rewrite to us pool of selenium URL for
- * multithread support
- */
-public class BrowserService
+public class UiServiceBase implements UiService
 {
   private WebDriver webDriver;
 
-  private WebDriver getDriver()
+  protected WebDriver getWebDriver()
   {
     return webDriver;
   }
 
-  private void setDriver( WebDriver webDriver )
+  private void setWebDriver( WebDriver webDriver )
   {
     this.webDriver = webDriver;
   }
@@ -36,14 +32,15 @@ public class BrowserService
     return webDriver;
   }
 
-  public WebDriver openBrowser()
+  @Override
+  public void openBrowser()
   {
-    setDriver( configureWebDriver() );
-    return getDriver();
+    setWebDriver( configureWebDriver() );
   }
 
+  @Override
   public void closeBrowser()
   {
-    getDriver().quit();
+    getWebDriver().quit();
   }
 }

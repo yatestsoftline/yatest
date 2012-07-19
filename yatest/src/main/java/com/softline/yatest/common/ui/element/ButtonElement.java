@@ -4,9 +4,8 @@ package com.softline.yatest.common.ui.element;
 import org.openqa.selenium.WebDriver;
 
 import com.softline.yatest.common.ui.element.behavior.ClickableElement;
-import com.softline.yatest.common.ui.element.search_strategy.IdSearchStrategy;
-import com.softline.yatest.common.ui.element.search_strategy.SearchStrategySelector;
-import com.softline.yatest.common.ui.element.wait_strategy.DisplayedElementWaitStrategy;
+import com.softline.yatest.common.ui.element.search_strategy.ClassNameSearchStrategy;
+import com.softline.yatest.common.ui.element.wait_strategy.DomWithElementWaitStrategy;
 import com.softline.yatest.common.ui.screen.Screen;
 
 
@@ -17,12 +16,7 @@ public class ButtonElement extends ElementBase implements ClickableElement
 {
   public ButtonElement( WebDriver webDriver, String id )
   {
-    super( new IdSearchStrategy(), new DisplayedElementWaitStrategy(), webDriver, id );
-  }
-
-  public ButtonElement( WebDriver webDriver, SearchStrategySelector searchStrategySelector, String id )
-  {
-    super( searchStrategySelector.getSearchStrategyForButtonValue(), new DisplayedElementWaitStrategy(), webDriver, id );
+    super( new ClassNameSearchStrategy(), new DomWithElementWaitStrategy(), webDriver, id );
   }
 
   @Override

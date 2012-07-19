@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.softline.yatest</groupId>
-	<artifactId>classmates</artifactId>
+	<artifactId>yatest</artifactId>
 	<version>trunk</version>
 	<packaging>jar</packaging>
 
-	<name>classmates</name>
+	<name>yatest</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

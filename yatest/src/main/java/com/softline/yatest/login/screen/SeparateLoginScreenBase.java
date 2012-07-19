@@ -1,5 +1,4 @@
-package com.softline.yatest.common.ui.screen;
-
+package com.softline.yatest.login.screen;
 
 import org.openqa.selenium.WebDriver;
 
@@ -7,13 +6,13 @@ import com.softline.yatest.common.ui.element.ButtonElement;
 import com.softline.yatest.common.ui.element.CheckboxElement;
 import com.softline.yatest.common.ui.element.ErrorNoteElement;
 import com.softline.yatest.common.ui.element.InputElement;
-import com.softline.yatest.common.ui.element.search_strategy.SearchStrategySelector;
-
+import com.softline.yatest.common.ui.screen.AuthorisedScreen;
+import com.softline.yatest.common.ui.screen.ScreenBase;
 
 /**
  * Login page, used not main page for checking drawing button somethere in code
  */
-public class SeparatePassportLoginScreenBase extends ScreenBase implements LoginScreen
+public class SeparateLoginScreenBase extends ScreenBase implements LoginScreen
 {
   private InputElement loginInput = new InputElement( getDriver(), "b-domik-username" );
 
@@ -21,12 +20,11 @@ public class SeparatePassportLoginScreenBase extends ScreenBase implements Login
 
   private CheckboxElement saveSessionCheckbox = new CheckboxElement( getDriver(), "b-domik-permanent" );
 
-  private ButtonElement loginButton = new ButtonElement( getDriver(), SearchStrategySelector.BUTTON_BY_CLASS_NAME,
-    "b-domik__submit" );
-  
-  private ErrorNoteElement errorNoteLogin = new ErrorNoteElement( getDriver(), "b-login-error");
+  private ButtonElement loginButton = new ButtonElement( getDriver(), "b-domik__submit" );
 
-  protected SeparatePassportLoginScreenBase( WebDriver webDriver, String directUrl )
+  private ErrorNoteElement errorNoteLogin = new ErrorNoteElement( getDriver(), "b-login-error" );
+
+  protected SeparateLoginScreenBase( WebDriver webDriver, String directUrl )
   {
     super( webDriver, directUrl );
   }
@@ -48,7 +46,7 @@ public class SeparatePassportLoginScreenBase extends ScreenBase implements Login
     saveSessionCheckbox.set( saveSession );
     loginButton.clickAndWaitForScreen( screen );
   }
-  
+
   @Override
   public void validateScreen()
   {
@@ -57,7 +55,7 @@ public class SeparatePassportLoginScreenBase extends ScreenBase implements Login
     saveSessionCheckbox.waitAndGetWebElement();
     loginButton.waitAndGetWebElement();
   }
-  
+
   public boolean isLoginErrorShown()
   {
     return errorNoteLogin.isErrorShown();

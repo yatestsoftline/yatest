@@ -1,15 +1,12 @@
-package com.softline.yatest.session.screen;
-
+package com.softline.yatest.login.screen;
 
 import org.openqa.selenium.WebDriver;
 
-import com.softline.yatest.common.ui.screen.SeparatePassportLoginScreenBase;
-
 
 /**
- * Login page, used not main page for checking drawing button somethere in code
+ * Screen for Yandex Passport page for not authorised user
  */
-public class PassportLoginScreen extends SeparatePassportLoginScreenBase
+public class PassportLoginScreen extends SeparateLoginScreenBase
 {
   public PassportLoginScreen( WebDriver webDriver )
   {
@@ -19,14 +16,14 @@ public class PassportLoginScreen extends SeparatePassportLoginScreenBase
   public PassportScreen login( String login, String password, boolean saveSession )
   {
     PassportScreen passportScreen = new PassportScreen( getDriver() );
-    login( login, password, saveSession,  passportScreen );
+    login( login, password, saveSession, passportScreen );
     return passportScreen;
   }
 
   public PassportLoginScreen loginFailed( String login, String password, boolean saveSession )
   {
     PassportLoginScreen passportLoginScreen = new PassportLoginScreen( getDriver() );
-    loginFailed( login, password, saveSession,  passportLoginScreen );
+    loginFailed( login, password, saveSession, passportLoginScreen );
     return passportLoginScreen;
   }
 }
