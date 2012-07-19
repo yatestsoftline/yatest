@@ -10,7 +10,7 @@ import com.softline.yatest.common.ui.screen.AuthorisedScreen;
 import com.softline.yatest.common.ui.screen.ScreenBase;
 
 /**
- * Login page, used not main page for checking drawing button somethere in code
+ * Base class for all login pages, used same elements
  */
 public class SeparateLoginScreenBase extends ScreenBase implements LoginScreen
 {

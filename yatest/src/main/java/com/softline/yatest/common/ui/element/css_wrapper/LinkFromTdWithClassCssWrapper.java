@@ -1,7 +1,7 @@
 package com.softline.yatest.common.ui.element.css_wrapper;
 
 /**
- * Wrapper of CSS selector for cancel link on edit screens
+ * Wrapper of CSS selector for some links
  */
 public class LinkFromTdWithClassCssWrapper implements CssWrapper
 {

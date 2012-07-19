@@ -9,7 +9,10 @@ import org.openqa.selenium.WebElement;
 public interface Element
 {
   public abstract String getSelector();
+
   public abstract int getNumber();
+
   public abstract WebElement getWebElement();
+
   public abstract WebDriver getWebDriver();
 }

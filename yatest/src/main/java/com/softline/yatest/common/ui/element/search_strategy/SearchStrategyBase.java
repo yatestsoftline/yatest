@@ -2,13 +2,10 @@ package com.softline.yatest.common.ui.element.search_strategy;
 
 import java.util.List;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.softline.yatest.common.ui.element.Element;
-
-
 
 /**
  * Shared functional for all search strategies
@@ -32,6 +29,6 @@ public abstract class SearchStrategyBase implements SearchStrategy
       return elements.get( toIndex( element.getNumber() ) );
     }
   }
-  
-  protected abstract By searchBy( String selector);
+
+  protected abstract By searchBy( String selector );
 }

@@ -1,12 +1,10 @@
 package com.softline.yatest.common.ui.element;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.softline.yatest.common.ui.element.search_strategy.SearchStrategy;
 import com.softline.yatest.common.ui.element.wait_strategy.WaitStrategy;
-
 
 /**
  * Shared functional for any element in DOM

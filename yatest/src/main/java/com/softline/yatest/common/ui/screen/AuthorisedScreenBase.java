@@ -1,14 +1,11 @@
 package com.softline.yatest.common.ui.screen;
 
-
 import org.openqa.selenium.WebDriver;
 
 import com.softline.yatest.common.ui.element.LinkElement;
 
-
-
 /**
- * Shared functionality (logout and validation) for any view screen
+ * Shared functionality (logout and validation) for any screen of authorised user
  */
 public class AuthorisedScreenBase extends ScreenBase implements AuthorisedScreen
 {

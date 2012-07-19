@@ -8,13 +8,14 @@ import com.softline.yatest.common.ui.element.search_strategy.CssSearchStrategy;
 import com.softline.yatest.common.ui.element.wait_strategy.DomWithElementWaitStrategy;
 
 /**
- * Different types of links
+ * Simple text field with data
  */
 public class FieldElement extends ElementBase implements ContentElement
 {
   public FieldElement( WebDriver webDriver, String className )
   {
-    super( new CssSearchStrategy(), new DomWithElementWaitStrategy(), webDriver, CssWrapperSelector.FIELD_FROM_TD_WITH_CLASS.getLinkCssWrapper().wrapToCssSelector( className ) );
+    super( new CssSearchStrategy(), new DomWithElementWaitStrategy(), webDriver,
+      CssWrapperSelector.FIELD_FROM_TD_WITH_CLASS.getLinkCssWrapper().wrapToCssSelector( className ) );
   }
 
   @Override

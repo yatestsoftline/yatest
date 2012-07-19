@@ -9,13 +9,14 @@ import com.softline.yatest.common.ui.element.wait_strategy.DomWithElementWaitStr
 import com.softline.yatest.common.ui.screen.Screen;
 
 /**
- * Different types of links
+ * Simple link
  */
 public class LinkElement extends ElementBase implements ClickableElement
 {
   public LinkElement( WebDriver webDriver, String className )
   {
-    super( new CssSearchStrategy(), new DomWithElementWaitStrategy(), webDriver, CssWrapperSelector.LINK_FROM_TD_WITH_CLASS.getLinkCssWrapper().wrapToCssSelector( className ) );
+    super( new CssSearchStrategy(), new DomWithElementWaitStrategy(), webDriver,
+      CssWrapperSelector.LINK_FROM_TD_WITH_CLASS.getLinkCssWrapper().wrapToCssSelector( className ) );
   }
 
   @Override
