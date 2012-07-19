@@ -15,7 +15,7 @@ public class SystemOutputLogger
 {
   private static Logger logger;
 
-  public static void outputLoggerconfigure()
+  public static void outputLoggerConfigure()
   {
     ConsoleAppender appender = new ConsoleAppender();
     appender.setWriter(new OutputStreamWriter(System.out));

@@ -1,13 +1,12 @@
 package com.softline.yatest.tests;
 
 import static com.softline.yatest.common.log.SystemOutputLogger.log;
-import static com.softline.yatest.common.log.SystemOutputLogger.outputLoggerconfigure;
+import static com.softline.yatest.common.log.SystemOutputLogger.outputLoggerConfigure;
 
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
 import com.softline.yatest.common.config.BrowserParameters;
-import com.softline.yatest.common.config.SessionParameters;
 
 
 /**
@@ -15,17 +14,15 @@ import com.softline.yatest.common.config.SessionParameters;
  */
 public class BaseTest
 {
-  @Parameters( {"webDriverURL", "classmatesUrl", "firefoxVersion", "firefoxPlatform"} )
+  @Parameters( {"webDriverURL", "firefoxVersion", "firefoxPlatform"} )
   @BeforeSuite
-  public void prepareConfig( String webDriverURL, String classmatesURL, String firefoxVersion, String firefoxPlatform )
+  public void prepareConfig( String webDriverURL, String firefoxVersion, String firefoxPlatform )
     throws Exception
   {
-    outputLoggerconfigure();
+    outputLoggerConfigure();
     BrowserParameters.getInstance().setWebDriverUrl( webDriverURL );
     BrowserParameters.getInstance().setFirefoxVersion( firefoxVersion );
     BrowserParameters.getInstance().setPlatform( firefoxPlatform );
     log().info( "Set WebDriver URL to: " + webDriverURL );
-    SessionParameters.getInstance().setUrl( classmatesURL );
-    log().info( "Set test host URL to: " + classmatesURL );
   }
 }

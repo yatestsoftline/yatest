@@ -8,8 +8,13 @@ import com.softline.yatest.session.object.Session;
  */
 public class SessionFactory
 {
-  public Session getDefaultSession()
+  public Session getValidSession()
   {
-    return new Session( "classmatestest", "4vtufntcnth", true );
+    return new Session( "yatestsoftline", "123qweqwe", true );
+  }
+
+  public Session getNotValidSession()
+  {
+    return new Session( "yatestsoftline", "123qwe", true );
   }
 }

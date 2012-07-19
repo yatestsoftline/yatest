@@ -19,11 +19,17 @@ public class SessionTest extends BaseTest
    * Very ugly
    * TODO Should be eliminated after Guice or some another AOP solution implemented
    */
-  private SessionUiServiceInProxy sessionUiService = UiServiceProxyFactory.getUiServiceProxy( SessionUiServiceInProxy.class, new SessionUiService( sessionFactory.getDefaultSession() ) );
+  private SessionUiServiceInProxy sessionUiService = UiServiceProxyFactory.getUiServiceProxy( SessionUiServiceInProxy.class, new SessionUiService() );
 
   @Test( enabled = true )
   public void testSuccesfullAuthorisation() throws Exception
   {
-    assertTrue( sessionUiService.isSessionPrepared() );
+    assertTrue( sessionUiService.isAuthPassed( sessionFactory.getValidSession() ) );
+  }
+
+  @Test( enabled = true )
+  public void testNotPassedAuthorisation() throws Exception
+  {
+    assertTrue( sessionUiService.isAuthFailedWithError( sessionFactory.getNotValidSession() ) );
   }
 }

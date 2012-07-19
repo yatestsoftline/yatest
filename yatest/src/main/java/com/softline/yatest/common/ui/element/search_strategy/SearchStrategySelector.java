@@ -5,7 +5,7 @@ package com.softline.yatest.common.ui.element.search_strategy;
  */
 public enum SearchStrategySelector
 {
-  BUTTON_BY_ID( new IdSearchStrategy() ), BUTTON_BY_NAME( new NameSearchStrategy() );
+  BUTTON_BY_ID( new IdSearchStrategy() ), BUTTON_BY_NAME( new NameSearchStrategy() ), BUTTON_BY_CLASS_NAME( new ClassNameSearchStrategy() );
 
   private final SearchStrategy searchStrategyForButton;
 

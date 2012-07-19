@@ -2,15 +2,11 @@ package com.softline.yatest.common.ui.service;
 
 import java.util.concurrent.TimeUnit;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.UnreachableBrowserException;
 
 import com.softline.yatest.common.config.BrowserParameters;
-import com.softline.yatest.common.config.SessionParameters;
 import com.softline.yatest.common.timeout.Timeout;
-
 
 /**
  * Service, which provide WebDriver object to any UI service, should be rewrite to us pool of selenium URL for
@@ -43,18 +39,11 @@ public class BrowserService
   public WebDriver openBrowser()
   {
     setDriver( configureWebDriver() );
-    getDriver().get( SessionParameters.getInstance().getUrl() );
     return getDriver();
   }
 
   public void closeBrowser()
   {
-    try
-    {
-      getDriver().quit();
-    }
-    catch( UnreachableBrowserException e )
-    {
-    }
+    getDriver().quit();
   }
 }

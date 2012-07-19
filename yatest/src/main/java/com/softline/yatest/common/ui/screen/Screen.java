@@ -6,4 +6,5 @@ package com.softline.yatest.common.ui.screen;
 public interface Screen
 {
   public abstract void validateScreen();
+  public abstract void open();
 }

@@ -51,6 +51,7 @@ public class UiServiceProxyFactory
       Object returnValue;
       try
       {
+        ( ( UiService ) wrappedUiService ).openBrowser();
         returnValue = method.invoke( wrappedUiService, args );
       }
       catch( Exception e )
@@ -58,8 +59,11 @@ public class UiServiceProxyFactory
         log().info( "----------------EXCEPTION----------------" );
         log().info( e.getMessage() );
         log().info( "----------------EXCEPTION----------------" );
-        ( ( UiService ) wrappedUiService ).closeSessionBrowser();
         throw e;
+      }
+      finally
+      {
+        ( ( UiService ) wrappedUiService ).closeBrowser();
       }
       StringBuffer afterMessage = new StringBuffer();
       afterMessage.append( "------------> " );

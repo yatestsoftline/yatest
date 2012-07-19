@@ -8,10 +8,12 @@ import org.openqa.selenium.WebDriver;
 public abstract class ScreenBase implements Screen
 {
   private WebDriver webDriver;
+  private String directUrl;
 
-  protected ScreenBase( WebDriver webDriver )
+  protected ScreenBase( WebDriver webDriver, String directUrl )
   {
     setDriver( webDriver );
+    setDirectUrl( directUrl ); 
   }
 
   protected WebDriver getDriver()
@@ -22,6 +24,21 @@ public abstract class ScreenBase implements Screen
   private void setDriver( WebDriver webDriver )
   {
     this.webDriver = webDriver;
+  }
+
+  private String getDirectUrl()
+  {
+    return directUrl;
+  }
+
+  private void setDirectUrl( String directUrl )
+  {
+    this.directUrl = directUrl;
+  }
+  
+  public void open()
+  {
+    getDriver().get( getDirectUrl() );
   }
 
   @Override
