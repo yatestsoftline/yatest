@@ -24,7 +24,7 @@ public class SeparatePassportLoginScreenBase extends ScreenBase implements Login
   private ButtonElement loginButton = new ButtonElement( getDriver(), SearchStrategySelector.BUTTON_BY_CLASS_NAME,
     "b-domik__submit" );
   
-  private ErrorNoteElement errorNoteLogin = new ErrorNoteElement( getDriver(), "l-centered b-login-error i-popup i-popup_visibility_visible");
+  private ErrorNoteElement errorNoteLogin = new ErrorNoteElement( getDriver(), "b-login-error");
 
   protected SeparatePassportLoginScreenBase( WebDriver webDriver, String directUrl )
   {

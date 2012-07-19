@@ -12,7 +12,7 @@ import com.softline.yatest.common.ui.element.LinkElement;
  */
 public class AuthorisedScreenBase extends ScreenBase implements AuthorisedScreen
 {
-  private LinkElement logoutLink = new LinkElement( getDriver(), "b-head-userinfo__link" );
+  private LinkElement logoutLink = new LinkElement( getDriver(), "b-head-userinfo__exit" );
 
   protected AuthorisedScreenBase( WebDriver webDriver, String directUrl )
   {
